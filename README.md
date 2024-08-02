@@ -2,7 +2,7 @@
 気に入ったYoutubeのレシピをまとめる
 
 # URL
-recipe-keeper-tau.vercel.app
+https://recipe-keeper-tau.vercel.app/
 
 # 仕組み
 googleのAPIからデータ取得してSSGする
