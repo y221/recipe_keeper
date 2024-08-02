@@ -1,20 +1,16 @@
-"use client";
+import { fetchRecipesData } from '../lib/fetchRecipesData';
+import RecipeGrid from '../components/ImageGrid';
+import Header from '../components/Header';
 
-import { NextPage } from 'next';
-import ImageGrid from '../components/ImageGrid';
-
-const HomePage: NextPage = () => {
-  const images = [
-    { id: '1', title: 'Image 1', imageUrl: '' },
-    { id: '2', title: 'Image 2', imageUrl: '' },
-    { id: '3', title: 'Image 3', imageUrl: '' },
-    // 他の画像も同様に追加
-  ];
+const HomePage = async () => {
+  const recipes = await fetchRecipesData();
 
   return (
-    <div className="container mx-auto">
-      <h1 className="text-4xl text-center my-10">Image Gallery</h1>
-      <ImageGrid images={images} />
+    <div>
+      <Header />
+      <div className="container mx-auto">
+        <RecipeGrid recipes={recipes} />
+      </div>
     </div>
   );
 };
